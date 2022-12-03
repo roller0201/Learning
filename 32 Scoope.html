@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Bloki kodu
+      // Blok to jedna lub kilka instrukcji (poleceń), które są zebrane w parze nawiasów klamrowych.
+      let purchaseAmount = 0;
+      let tax = 0;
+      // poniższy blok kodu zawsze się wykona
+      {
+        tax = purchaseAmount * 0.23;
+        purchaseAmount = purchaseAmount + tax;
+      }
+      console.log(purchaseAmount); // wyświetli 0
+
+      // Bloki kodu
+      // Najczęściej używamy z instrukcjami kontrolnymi np if dzięki czemu blok wykonywany
+      // wykonywany jest tylko jeśli jest spełniony warunek tej instrukcji.
+      let purchaseAmount2 = 10;
+      let tax2 = 0;
+      // poniższy blok wykona się tylko jeśli purchaseAmount jest większe od zera
+      if (purchaseAmount2 > 0) {
+        tax2 = purchaseAmount2 * 0.23;
+        purchaseAmount2 = purchaseAmount2 + tax2;
+      }
+      console.log(purchaseAmount2); // wyświetli 12.3
+
+      /*
+        Zakres tzw. scope
+        Zakres większości języków programowania definiowany jest przez blok kodu, ale nie w JS..
+        W JavaScript wyróżniamy zakres globalny oraz lokalny. Zakres to widoczność zmiennych dla
+        poszczególnych części programu.
+        
+        Zakres globalny istnieje przez całe życie skryptu, raz zadeklarowana zmienna globalna już
+        tam pozostanie, z wyjątkiem użycia na niej delete. Globalna zmienna może być używana
+        wewnątrz oraz poza funkcją, w praktyce gdziekolwiek w bieżącym dokumencie.
+        W przeglądarce window jest obiektem globalnym.
+        
+        Zakres lokalny istnieje wewnątrz ciała funkcji w której zmienna została zadeklarowana,
+        włączając argumenty funkcji.
+        Domyślnie javascript nie ma zakresu blokowego co powoduje pewne problemy.
+        */
+
+      // Scope w funkcji
+      // Wszystko zadeklarowane wewnątrz funkcji ma zakres lokalny, w funkcji mamy też dostęp do
+      // zmiennych globalnych.
+      let someGlobal = "Ala ";
+      function test(param) {
+        // argument jest zmienną lokalną
+        var txt = " kota"; // zmienna lokalna, zakres lokalny
+        console.log(
+          someGlobal + // dostęp do zmiennej globalnej wewnątrz funkcji
+            param +
+            txt
+        );
+      }
+      test("ma"); // "Ala ma kota"
+      //console.log(txt); // ReferenceError: txt is not defined, bo zakres lokalny
+
+      // Przesłanianie zmiennych globalnych w funkcji
+      // Takie same nazwy lokalnych zmiennych w funkcji przesłaniają nazwy zmiennych globalnych.
+      let someData = 99;
+      function test() {
+        var someData = 1000; // lokanle zmienna someData
+        console.log("lokalne someData:" + someData);
+        console.log("globalne someData:" + window.someData);
+      }
+      test();
+      // lokanle someData: 99
+      // globalne someData: 1000
+      console.log(someData); // 99
+
+      // Scope w funkcji
+      // Brak let przy deklaracji zmiennej wewnątrz funkcji spowoduje powstanie zmiennej globalnej!
+      function test2() {
+        let a = 5;
+        b = 10; // zmienna globalna!
+      }
+      //console.log(b); // ReferenceError: b is not defined
+      test2();
+      console.log(b); // 10
+      console.log(window.b); // 10
+
+      // Strict mode od ES5
+      // Strict mode wprowadzony w ECMAScript 5 jest bardziej restrykcyjną wersją JavaScript co
+      // wymusza pisanie bardziej przemyślanego kodu. Pozwala na uniknięcie przypadkowego
+      // stworzenia zmiennej globalnej.
+      function doSomething() {
+        "use strict"; // strict mode włączony na poziomie funkcji
+        let a = 5;
+        //b = 10; // próba stworzenia zmiennej globalnej w strict mode
+        // będzie błąd
+      }
+      // kończy się błędem
+      // Uncaught ReferenceError: assignment to undeclared variable b
+      doSomething();
+
+      // Scope w funkcji
+      // Wywołana funkcja może zmienić wartość zmiennej globalnej.
+      let someData1 = 10;
+      function doSth() {
+        someData = 50;
+      }
+      doSth();
+      console.log(someData); // 50
+
+      // Scope, a pętla for z var
+      // Zmienna zadeklarowana wewnątrz bloku kodu jest widoczna poza nim np w pętli for, bo nie
+      // ma zakresu dostępnego dla funkcji.
+      // scope a pętla for
+      for (var i = 0; i < 5; i++) {
+        // jakieś działania
+      }
+      console.log(i); // dostęp do zmiennej i poza ciałem pętli, 5
+
+      // Scope, a instrukcja if z var
+      // Zmienna zadeklarowana wewnątrz bloku instrukcji warunkowej również będzie dostępna poza
+      // tym blokiem.
+      if (1 == 1) {
+        var someVarData = 8;
+      }
+      console.log(someVarData); // 8
+
+      /*
+        let i const posiadają zakres blokowy
+        var jest dostępne w każdej wersji JS, ale ogranicza się do zakresu lokalnego funkcji co ma swoje
+        ograniczenia, dlatego w ECMAScript 6 dodano dodatkowe deklaracje przy pomocy let i const,
+        które mają zasięg blokowy.
+        */
+
+      // let ma zakres blokowy
+      if (1 == 1) {
+        let someLetData = 8;
+      }
+      // Uncaught ReferenceError:
+      // someLetData is not defined
+      // console.log(someLetData); // będzie błąd
+    </script>
+  </body>
+</html>

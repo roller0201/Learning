@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // zmienna temperature, wartości -10, 0. 10. 20. 30. 40
+      // informacja ze względu na temperaturę czy jest b.zimno - 10, zimno - 0,
+      // 10 - wiosna, 20 - lato, 30 - gorąco, 40 - b. gorąco
+      // dla temperature < -10 zostajemy w domu
+      // dla temperature > 40 zostajemy też w domu
+      // pierwsza wersja z if else if
+      // 2 wersja z instrukcją warunkową switch
+      let temperature = 50;
+      if (temperature == -10) {
+        console.log("b.zimno");
+      } else if (temperature == 0) {
+        console.log("zimno");
+      } else if (temperature == 10) {
+        console.log("wiosna");
+      } else if (temperature == 20) {
+        console.log("lato");
+      } else if (temperature == 30) {
+        console.log("gorąco");
+      } else if (temperature == 40) {
+        console.log("b. gorąco");
+      } else if (temperature < -10) {
+        console.log("Zostajemy w domu");
+      } else if (temperature > 40) {
+        console.log("Zostajemy w domu");
+      }
+
+      switch (temperature) {
+        case -10:
+          console.log("b.zimno");
+          break;
+        case 0:
+          console.log("zimno");
+          break;
+        case 10:
+          console.log("wiosna");
+          break;
+        case 20:
+          console.log("lato");
+          break;
+        case 30:
+          console.log("gorąco");
+          break;
+        case 40:
+          console.log("b. gorąco");
+          break;
+        default:
+          console.log("Zostajemy w domu");
+      }
+    </script>
+  </body>
+</html>

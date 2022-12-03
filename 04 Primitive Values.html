@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // dynamicznie typowany język
+      let num = 10; // liczba - number
+      data = "Hello!"; // tekst - String
+      data = "Hello!"; // to samo ale z apostrofami
+      data = `Hello
+      World
+      and ${num}
+      Hello 
+      Again`; // to samo, ale w wielu liniach
+      // Łańcuch znaków to też jest String, w baktickach nazywamy go template literals
+      console.log(data);
+      let flag = true; // wartość logiczna tzw. Boolean wart. true
+      flag = false; // Boolean - wartość false
+      let someValue; // brak przypisania wartości podczas deklaracji, automatycznie przypisze undefined
+      console.log(someValue); // undefined
+      someValue = 77;
+      console.log(someValue); // 77
+      someValue = null;
+      console.log(someValue); // null
+
+      // Symbol
+      // BigInt
+
+      // Zmienne zawsze deklarujemy przed ich użyciem
+      // console.log(name);
+      // let name = "Ania";
+
+      let name = "Ania";
+      console.log(name);
+      // let name = "Daniel"; // błąd nie używamy dwa razy let przy tej samej zmiennej
+      name = "Daniel";
+    </script>
+  </body>
+</html>

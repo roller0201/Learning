@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Hoisting jest to przeniesienie wszystkich deklaracji zmiennych oraz funkcji na początek funkcji,
+      // ale przypisanie pozostaje na swoim miejscu
+
+      function test() {
+        console.log(data); // undefined
+        var data = 4;
+        console.log(data); // 4
+      }
+      test();
+      // to samo co
+      function test() {
+        var data;
+        console.log(data); // undefined
+        data = 4;
+        console.log(data); // 4
+      }
+
+      test(5, 4); // wynik 20
+      function test(a, b) {
+        console.log("Wynik: " + a * b);
+      }
+      // to samo co
+      function test(a, b) {
+        console.log("Wynik: " + a * b);
+      }
+      test(5, 4);
+
+      var a = 10;
+      console.log(a + b); // 10 + undefined = NaN
+      var b = 5;
+
+      // Temporal Dead Zone
+      let y = 5;
+      {
+        x = 100;
+        console.log(y); // 100
+      }
+      console.log(y); // 100 jest ok
+
+      let x = 5;
+      {
+        x = 100;
+        let x = 7;
+        console.log(x);
+      }
+      console.log(x); // błąd TOZ
+
+      var n = 10;
+      console.log("Po przypisaniu n:" + n);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a; // zmienna jest zadeklarowana, ale nie zdefiniowana
+      console.log(a); //undefined
+      if (a == undefined) console.log("Brak wartości");
+
+      b; // reference error b is not defined
+      // w praktyce b jest niezadeklarowana bo nie ma użytego let, const czy var
+
+      console.log(typeof b); // undefined
+
+      // proste porównania, tylko wartości, jeśli nie są tego samego typu
+      // to będzie konwersja
+      //if (null = undefined) console.log("true, wykona się"); // kod się wykona
+      // porównanie ścisłe, typy się nie zgadzają, więc nie równe
+      // if (null = undefined) console.log("false, Nie wykona się"); // kod nie wykona się
+
+      let test = 5;
+      console.log(test); // 5
+
+      test = null;
+      console.log(test); // null
+      console.log(typeof null); // object
+
+      // null i indefined to falsy values - fałszywe wartości
+      if (null) console.log(" nie wykona się, bo null ma false");
+      if (undefined) console.log("nie wykona się, bo undefined ma false");
+    </script>
+  </body>
+</html>

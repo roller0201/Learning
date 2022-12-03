@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // tablice - uporządkowane kolekcje elementów, nie są typem a obiektem
+      // mogą przechowywać dowolne typy: proste i złozone
+      // elementy są uporządkowane w postaci indeksów, każdy indeks
+      // to liczba całkowita, liczone są od 0
+
+      let a = []; // pusta tablica
+      let b = [22, "tekst", { a: 1 }, [5, 4, 3], function () {}, null];
+      console.log(b);
+      console.log(b[6]); // unedfined
+      console.log(b[b.length - 1]); // null
+      console.log(b[0]); // 22
+
+      b[2] = 99;
+      console.log(b);
+
+      let c = new Array(12, "test", 9);
+      console.log(c);
+      let d = Array(1, 2, 3);
+      console.log(d);
+
+      let e = [];
+      e[0] = "test";
+      e[1] = "test1";
+      e[7] = "test2";
+      e[e.length] = "test3";
+      e.push("test 5");
+      console.log(e);
+
+      let f = [0, 1, 2, 3, 4, 5, 6, 7];
+      console.log(f);
+      f.length = 4;
+      console.log(f); // [0,1,2,4];
+      delete f[1]; //[0, empty,2, 3 ]
+      console.log(f);
+
+      console.log(1 in f); // false
+      console.log(2 in f); // true
+
+      let g = Array(5).fill(7);
+      console.log(g); // [7,7,7,7,7]
+
+      // iteracja - przechodzenie po elementach tablicy
+      let h = [99, 56, 45, "tekst"];
+      for (let i = 0; i < h.length; i++) {
+        console.log(h[i]);
+      }
+      let arr1 = ["el1", "el2", "el3", 88];
+      arr1.forEach(function (item, index) {
+        console.log(item, index);
+      });
+
+      let arr2 = arr1.concat([1, 2, 3]);
+      console.log(arr2);
+
+      let arr3 = arr1.concat([5, 6], [10, 11, 12]); //['el1', 'el2', 'el3', 88, 1, 2, 3]
+      console.log(arr3); // ['el1', 'el2', 'el3', 88, 5, 6, 10, 11, 12]
+
+      let strFromArr = arr1.join();
+      console.log(strFromArr); //el1,el2,el3,88
+      let strFromArr2 = arr1.join("|");
+      console.log(strFromArr2); // el1|el2|el3|88
+
+      let arr4 = [1, 2, 3, 4];
+      arr4.reverse();
+      console.log(arr4); //[[4, 3, 2, 1]];
+
+      arr4.push(99);
+      console.log(arr4); //[4, 3, 2, 1, 99]
+
+      let arrEl = arr4.pop();
+      console.log(arrEl); //99
+      console.log(arr4); // [4, 3, 2, 1]
+    </script>
+  </body>
+</html>

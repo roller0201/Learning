@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // number typ wartości, zmiennoprzecinkowy 64 bitowy
+      // number pozwala na zapis licz całk. oraz dziesiętnych
+
+      let a = 1; // liczba całkowita
+      let b = 1.222; // liczba zmiennoprzecinkowa
+      let c = 0xf;
+      const d = 0.45; // to samo co 0.45
+
+      // maksymalna bezpieczna liczba całkowita dodatnia i ujemna
+      console.log(Number.MAX_SAFE_INTEGER); // max licza całkowita
+      console.log(Number.MIN_SAFE_INTEGER); // min liczba całkowita
+      console.log(Number.isSafeInteger(9007199254740991)); // true, spr bezpiecznej liczby całkowitej
+
+      //NaN - Not a number, specjalna wartość która określa, że coś nie jest liczbą
+      const someNan = 0 / 0; //NaN
+      console.log(someNan);
+      // parseInt - konwersja łańcucha znaków na liczbę
+      let someNum = parseInt("12,345");
+      console.log(someNum);
+      console.log(parseInt("tekst 12.345")); // NaN - nie udała się konwersja na liczbę
+
+      console.log(isNaN(0 / 0)); // true bo 0/0 daje NaN
+
+      console.log(Number.isNaN(67));
+
+      // Infinity , -Infinity - nieskończoność
+      let infinityPositive = 1 / 0; // infinity
+      console.log(Number.isFinite(infinityPositive)== false); // true
+      console.log(Number.isFinite(10)); // true
+
+      console.log(Number.POSITIVE_INFINITY); // infinity
+      console.log(Number.NEGATIVE_INFINITY); // - infinity
+
+      //parseFloat
+
+      console.log(Number.parseFloat("12.678Tekst")); //12,678
+
+      // isInteger() - czy jest liczba liczbą całkowitą
+      console.log(Number.isInteger(12/6)); // true
+      console.log(Number.isInteger(10/3)); // false
+
+      // toFixed(n) - ucina końcówke liczby do n ilości cyfr
+      console.log(23.456.toFixed(1)); //23,5
+
+      // zaokrąglanie liczb
+      // round() - do najbliższej liczby całkwitej
+      console.log(Math.round(1.78)); // 2
+      // Math.floor() - "zaokrąglanie do dołu"
+      console.log(Math.floor(1.9999)); // 1
+      // Math.ceil() - "zakrąglanie do góry"
+      console.log(Math.ceil(1.000001)); //2
+    </script>
+  </body>
+</html>

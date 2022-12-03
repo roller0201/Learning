@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // wartość początkowa licznika to -2
+      // licznik sprawdzamy czy jest mniejszy równy 2
+      // w kazdej literacji musimy sprawdzić za pomocą if i wyświetlić
+      // informację czy liczba jest dodatnia czy ujemna, czy zero
+
+      for (let i = -2; i <= 2; i++) {
+        if (i > 0) {
+          console.log("Wartośc i jest dodatnia", i);
+        } else if (i < 0) {
+          console.log("Wartość i jest ujemna", i);
+        } else if (i == 0) {
+          console.log("Wartość jest równa 0", i);
+        }
+      }
+      console.log("Koniec pętli");
+    </script>
+  </body>
+</html>

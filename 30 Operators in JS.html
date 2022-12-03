@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+        Operatory umożliwiają operacje na operandach. Niektóre operatory pracują na 1, inne na 2
+        oraz nawet na 3 operandach.
+        Wyrażenia w Javascript mając na celu uzyskanie jakiejś wartości, są stworzone z operatorów
+        działających na operandach
+        */
+      let a1 = 10; // = operator przypisania
+
+      /*
+        Typy operatorów
+        Można wyróżnić następujące typy operatorów:
+        - operatory przypisania, w tym złożone (compound): = , += , -= etc.
+        - operatory arytmetyczne: + , - , * , / , ++ etc.
+        - operatory porównania: == , != , === , >= , < etc.
+        - operatory bitowe: & , - etc.
+        - operatory logiczne: && , || , ! etc
+        - operatory łączenia stringów: + , +=
+        - operator warunkowy tzw. ternary: warunek ? wyrażenie dla true : dla false
+        - operator przecinka, używany głównie w pętli for
+        - operatory jednoargumentowe tzw unary: delete, typeof
+        - operatory relacyjne: in, instanceof
+        */
+
+      // przypisania
+      let a = 10; // = najprostszy operator przypisania
+      a += 5; // operator przypisania oraz arytmetyczny, dodanie do a 5 i przypisanie
+      a -= 3; // odjęcie 3 z a i przypisanie do a, wynik 12
+      a *= 2; // pomnożenie a przez dwa i przypisanie do a, wynik 24
+      a /= 3; // podzielenie a przez 3 i przypisanie wyniku do a, rezultat 8
+      a %= 5; // reszta z dzielenia z przez 5 i przypisanie, rezultat 3
+      a **= 3; // 3 do 3 potęgi, wynik 27
+
+      // Operatory arytmetyczne wykonują operacje matematyczne na zmiennych.
+      // operatory arytmetyczne
+      let b = 0;
+      b = 3 + 5; // 8
+      b = 7 - 3; // 4
+      b = 2 * 10; // 20
+      b = 22 / 11; // 2
+      b++; // operator inkrementacji, zwiększa o jeden (inkrementuje zmienną b)
+      b--; // operator dekrementacji, zmniejsza o jeden (dekrementuje zmienną b)
+
+      // Operator porównania porównuje lewy operand z prawym i zwraca true jeśli warunek jest
+      // spełniony, w przeciwnym wypadku false.
+      // operator porównania
+      console.log(8 == 3); // równa się, false
+      console.log(8 == 8); // równa się, true
+      console.log(8 != 3); // nie równa się, true
+      console.log(8 != 8); // nie równa się, false
+      console.log(3 < 7); // mniejsze, true
+      console.log(3 > 7); // większe, false
+      console.log(5 <= 5); // mniejsze lub równa się, true
+      console.log(6 >= 9); // większe lub równa się, false
+
+      // Ścisłe równa się oraz nie równa się sprawdzają dodatkowo typ.
+      // Jeśli wartość się zgadza, ale typ już nie to obie wartości nie są równe i zwraca false;
+      // luźne porównanie różnych typów, number i string
+      // string zostanie przekształcony na number, nastąpi konwersja
+      if (5 == "5") console.log("true, ta sama wartość 5");
+      // ścisłe porównanie,
+      // typy się nie zgadzają, więc
+      if (5 === "5") console.log("false, różne typy"); // nie wykona się, number i string
+      // typy się zgadzają, więc się wykona
+      if (5 === 5) console.log("true, te same typy i wartość ");
+
+      //Przy porównaniu liczby i obiektu nastąpi próba przekształcenia obiektu w liczbę,
+      // jeżeli nie jest to możliwe przyjmie wartość NaN.
+      if (10 === { a: 10 }) console.log("false"); // false, nie wykona się
+      if (10 == { a: 10 }) console.log("false"); // false, nie wykona się
+
+      // Przy porównaniu obiektów sprawdzany jest adres pod którym jest obiekt, a nie jego zawartość.
+      // Jeśli adresy się zgadzają to wynikiem jest true.
+      let a2 = { data: 22 };
+      if (a2 == a2) console.log("true"); // true, te same adresy w pamięci
+      let c = { data: 22 };
+      let d = { data: 22 };
+      if (c == d) console.log("false"); // false, różne a dresy, więc różne obiekty
+
+      // Operatory logiczne pozwalają łączyć kilka porównań.
+      // && daje true jeśli obie strony dają true, tzw koniunkcja lub iloczyn logiczny, z eng.: logical AND
+      if (true && true) console.log("ok"); // wykona się, bo obie strony dają true
+      if (10 > 7 && 3 <= 3) console.log("true"); // obie strony dają true
+      if (10 > 7 && false) console.log("false"); // nie wykona się
+
+      //  Operatory logiczne - || oraz !
+      //  || daje true jeśli chociaż jedna z stron lub obie dadzą true, nazywany równie sumą logiczną OR
+      if (true || false) console.log("wykona się");
+      if (true || true) console.log("wykona się");
+      if (false || false) console.log("nie wykona się");
+      if (10 > 5 || 3 == 7) console.log("wykona się");
+
+      // ! czyli negacja tzw NOT, odwraca logiczny stan operandu
+      if (10 > 7) console.log("wykona się"); // true
+      // true zostanie odwrócone przez ! na false
+      if (!(10 > 7)) console.log("nie wykona się");
+
+      /* Operatory bitowe operują na poszczególnych bitach liczby, operandy konwertowane są
+         do 32 bitowych liczb. Następnie dany bit operandu jest porównywany z odpowiadającym
+         bitem drugiego operandu.
+        
+         & - bitowe AND bit ma wartość jeden jeśli oba są jeden, w innym przypadku 0
+        
+        | - bitowe OR, bit 0 ustawiany jeśli oba bity mają 0, para 1 i 0 daje 1
+        
+        ^ - bitowe XOR, zwraca 1 na pozycji, na której tylko jeden z argumentów jest jedynką,
+            1 i 1 oraz 0 i 0 dają 0
+        */
+
+      // Operatory łączenia stringów
+      // Teksty można łączyć za pomocą operatora konkatenacji, łączenia stringów +
+      // W wyniku tej operacji powstaje nowy string.
+      let result = "Witaj " + " świecie!";
+      result += "!!"; // "Witaj Świecie!!!"
+
+      // Operator warunkowy (trójargumentowy, trójelementowy)
+      // Operator warunkowy ustala wartość wyrażenia, jeśli będzie prawdą to wykonane zostanie
+      // pierwsze polecenie, jeśli fałszem to drugie.
+      // warunek ? wartość1: wartość2
+      let age = 18;
+      let data = age >= 18 ? "dorosły" : "nieletni";
+      // to samo co
+      if (age >= 18) {
+        data = "dorosły";
+      } else {
+        data = "nieletni";
+      }
+
+      // Operator przecinka
+      // Operator przecinka umożliwia umieszczenie wiele wyrażeń, gdzie zwykle umieszcza się jedno
+      // wyrażenie. Dość rzadko jest używany, ale jest dostępny.
+      for (let i = 0, j = 5; i < 5; i++, j--) {
+        console.log("i:" + i + " j:" + j);
+      }
+
+      // Operatory jednoargumentowe tzw. unary
+      // Takie operatory przyjmują jeden operand.
+      let obj = { str: "text" };
+      console.log(obj.str); // "text"
+      delete obj.str; // operator delete kasuje właściwość wewnątrz obiektu
+      console.log(obj.str); // undefined
+      typeof 123.45; // number, operator zwraca typ wartości
+      let c1 = +"27"; // operator + konwertuje operand na liczbę, c=27
+      let d1 = -"27"; // number: -27
+      let e1 = void 0; // void wywołuje wyrażenie i zwraca undefined
+      // inkrementacja oraz dekrementacja to również operatory jednoargumentowe
+
+      // Operatory relacyjne
+      // Takie operatory porównują operandy i zwracają true jeśli spełniają porównanie
+      let obj1 = { num: 10 };
+      if ("num" in obj1) console.log("zmienna num w obj1"); // zmienna num jest w obj
+      let arr = ["one", "two", "three"];
+      if (1 in arr) console.log("indeks 1 jest w tablicy");
+      if ("length" in arr) console.log("właściwość length jest w tablicy");
+      // instanceof sprawdza czy dany obiekt jest określonego typu
+      let date = new Date(2020, 12, 20);
+      if (date instanceof Date) {
+        // date jest obiektem typu Date
+      }
+
+      /*
+        Pierwszeństwo operatorów
+        Opisuje, które operatory mają
+        pierwszeństwo przed innymi,
+        które wyrażenia wpierw będą
+        procesowane, po lewej priorytet
+        od najwyższego do najniższego.
+        Nawiasy pozwalają na zmianę
+        priorytetu.
+        . []
+        () new
+        ! ~ - + ++ -- typeof void delete
+        * / %
+        + -
+        << >> >>>
+        < <= > >= in instanceof
+        == != === !==
+        & ^
+        |
+        &&
+        ||
+        ?:
+        = += -= *= /= %= <<= >>= >>>= &= ^= |= &&= ||= ??=
+        ,
+        */
+    </script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function add(a, b) {
+        let c = a + b;
+        console.log("Wynik:", c);
+      }
+      add(8, 3);
+      add(20, 15);
+      add(100, 105);
+
+      let x = 10;
+      let y = 45;
+      if (x > 5) {
+        add(x, y);
+      }
+      // definicja funkcji
+      // nazwa funkcji multiply
+      // parametry funkcji a oraz b
+
+      function multiply(a, b) {
+        return a * b;
+      }
+      // 15 i 4 to argumenty funkcji podczas jej wywolania
+      let result = multiply(15, 4);
+      console.log("result", result);
+      // wyrażenie funkcyjne
+      let division = function (a, b) {
+        return a / b;
+      };
+      let divisionResult = division(100, 3);
+      console.log("Wynik dzielenia:", divisionResult);
+
+      let data = 55;// zmienna globalna, dostępna w całym programie
+      let text = "javaScript";
+      function test(){
+        let text = "Hello"; // zmienna lokalna widoczna tylko wewnątrz funkcji
+        console.log("Wartość data:", data);
+        console.log("Wartość tekst", text);
+      }
+      test();
+      console.log(text);
+    </script>
+  </body>
+</html>

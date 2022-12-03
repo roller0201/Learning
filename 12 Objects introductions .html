@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // proste zmienne
+      let num = 10;
+      // utworzenie obiektu w postacji notacji literału
+      let car1 = {
+        brand: "Chevrolet",
+        model: "Corvette",
+        year: 1967,
+      };
+      console.log(car1);
+      console.log(car1.brand);
+      console.log(car1.year);
+      let rocket = {
+        brand: "SpaceX",
+        model: "Falcon",
+        topSpeed: 30000,
+        printInfo: function () {
+          console.log(this.brand, this.model, this.topSpeed);
+        },
+        printTopSpeed: function () {
+          console.log("Maksymalna prędkość rakiety to:", this.topSpeed);
+        },
+      };
+      rocket.printInfo();
+      rocket.printTopSpeed();
+    </script>
+  </body>
+</html>

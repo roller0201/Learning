@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="button 1">click me</button>
+    <button id="button 2">click me 2</button>
+    <script>
+      function test1() {}
+      let test2 = function () {
+        // funkcja anonimowa bo nie ma nazwy przypisania do zmiennej test 2
+      };
+      // definicja funkcji z callbackiem jako argumentem
+      function test3(a, callback) {
+        console.log("test3", a);
+        callback(a);
+      }
+
+      function test4(arg) {
+        console.log("test4 arg:", arg);
+      }
+      test3(12, test4);
+      // test3: 12
+      // test 4 arg: 12
+
+      // drugi przykład
+      function ok(num) {
+        console.log("Liczba dodatnia lub większa od 0, num:", num);
+      }
+      function err(num) {
+        console.log("Liczba ujemna, błąd, num:", num);
+      }
+      function testPositiveNum(n, resolve, error) {
+        if (n >= 0) {
+          resolve(n);
+        } else {
+          error(n);
+        }
+      }
+      testPositiveNum(-5, ok, err);
+      // podpięcie funkcji callback pod zdarzenie click
+      function buttonClicked(event) {
+        console.log("Przycisk kliknięty");
+      }
+      document
+        .getElementById("button 1")
+        .addEventListener("click", buttonClicked);
+
+      document
+        .getElementById("button 2")
+        .addEventListener("click", function () {
+          console.log("Button 2 clicked");
+        });
+    </script>
+  </body>
+</html>

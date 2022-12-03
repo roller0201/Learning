@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        if(true) console.log("ok"); //ok
+        if("10" == 10) console.log("ok"); // ok
+        if("10" === 10) console.log("ok"); //nie wykona się
+        if("10" === String(10)) console.log("ok"); // ok
+        if( "10" === 1 + "0") console.log("ok"); //ok
+        if( "20"-5 === 15) console.log("ok"); //ok
+        Number("12"); //12
+        parseInt("212sada"); //212
+        Boolean(0); // false
+        Boolean (1); // true
+        if(0) console.log("ok"); // nie wykona się
+        !true // false, negacja
+        !!true // true, podwójna negacja
+        
+
+        
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="content"></div>
+    <div id="content2"></div>
+    <script>
+      function setContentToHtml(id, content) {
+        let div = document.getElementById(id);
+        console.log(div);
+        div.innerHTML = content;
+      }
+      // zdarzenie load wywołane gdy załadowane są obrakzi, kod html, css i DOM
+      window.addEventListener("load", function () {
+        console.log("Load event");
+        setContentToHtml("content1", "Hello World");
+      });
+
+      window.onload = function () {
+        console.log("Onlad czyli load event!");
+        setContentToHtml("content2", "Hello World2");
+      };
+    </script>
+  </body>
+</html>

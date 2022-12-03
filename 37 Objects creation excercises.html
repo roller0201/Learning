@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // literał obiektu
+        let school = {
+            name: "SGH",
+            numStudents: 2000,
+            address:{
+                country: "Poland",
+                city: "Warsaw"
+            },
+            students: [
+             {name:"Ania", age: 24},
+             {name:"Adam", age: 25},
+             {name:"Ola", age: 21},
+        ],
+        printSchoolInfo: function(){
+            console.log(`
+            Studia: ${this.name}
+            ilość studentów: ${this.numStudents}`);
+            
+            console.log(`
+            Addres: ${this.address.city}`);
+
+            this.students.forEach(function(student){
+                console.log(`Student: ${student.name}, wiek: ${student.age}`)
+
+            });
+        }
+    };
+    school.printSchoolInfo();
+
+    function generateStudent(name, age){
+        return{
+            name: name,
+            age: age,
+            addres: {
+                country: "Poland",
+                city: null,
+                street: null,
+            },
+            getName: function(){
+                return this.name;
+            }
+
+        }
+    }
+    const student1 = generateStudent("Ola", 23);
+    const student2 = generateStudent("Adam", 23);
+    console.log(student2);
+
+    //funkcje konstruujące z wykorzystaniem new
+    let date1 = new Date(2030, 12, 12);
+    console.log(date1);
+
+    function Bus(brand, model, numSeats){
+        this.brand = brand;
+        this.model = model; 
+        this.numSeats = numSeats;
+        this.country = "Poland";
+        this.printName = function(){
+            console.log(`${this.brand} ${this.model}` );
+        }
+
+    }
+    const bus1 = new Bus("Solaris", "city", 70);
+    bus1.printName(); // Solaris city
+    bus1.model = "x 3";
+    bus1.printName(); // Solaris x 3
+
+    // brak new że this wskazuje na window
+    //const bus2 = Bus("Neoplan", "Model1", 80); // window brand- zle
+
+    let plane = new Object();
+    plane.brand = "Airbus";
+    plane.mode = "X3";
+    plane.numSeats = 100;
+    console.log(plane);
+
+    let brand ={brand:"Ford", country: "USA"};
+    let car = Object.create(brand);
+    car.model = "Mustang";
+    console.log(car);
+    let car2 = Object.create(brand);
+    car2.model = "Focus";
+    console.log(car2);
+
+    </script>
+</body>
+</html>
