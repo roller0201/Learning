@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function statement
+
+        function foo(arg1,arg2){
+            console.log(arg1, arg2);
+        }
+        foo("test1", "test2");
+
+        const addNums = function(a,b){
+            return a+b;
+        }
+        console.log(addNums(3,5));
+
+        console.log(typeof addNums); // function
+        console.dir(addNums.name); // addNums
+        console.log(addNums.length); //2
+
+        
+        addNums.something = "test";
+        console.dir(addNums.something); // test funkcja jest równiez obiektem
+        console.dir(addNums.toString()); // ciało funkcji
+
+        // scope - zakres zmiennych w funkcji
+        function testScoope(arg1){
+            let localVariable = 10;
+            console.log(arg1, localVariable);// lokalne zmienne 
+        }
+        testScoope(7); //7,10
+
+        // console.log(arg1,localVariable); // reference error
+        function testFunction1(){
+            const data = 10;
+            const result1 = test2(8);
+            console.log("result1:", result1);
+            
+            function test2(arg){
+                let data = 99;
+                return arg + data;
+            }
+            const result2 = test2(18);
+            console.log("result2:", result2);
+        }
+        testFunction1();
+        let testFuncExpr = function(){
+            console.log("test func expr!");
+
+        }
+        testFuncExpr();
+    </script>
+</body>
+</html>
