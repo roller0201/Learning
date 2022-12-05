@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let test = (a,b,c) => a+b+c;
+        console.log(test(1,2,3)); //6
+
+        let test2 = (a,b,c) => {
+            return a+b+c;
+        }
+        console.log(test2(2,3,4)); //9
+
+        let print = a => console.log(a);
+        print(111); //111
+        
+        let getObj =  () => ({name:"Ola"});
+        console.log(getObj()); // {name: "Ola"}
+
+        let user = {
+            name: "Ania",
+            city: "Wawa",
+            printInfo: function(){
+                setTimeout(() => {
+                    console.log(this);
+                    console.log(this.name, this.city);
+                }, 100);
+            }
+        }
+        user.printInfo();
+
+
+    </script>
+</body>
+</html>
