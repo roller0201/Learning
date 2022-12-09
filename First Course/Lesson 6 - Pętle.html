@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>  div {
+        width: 320px;
+        padding: 10px;
+        border: 5px solid gray;
+        margin: 0;
+      }  </style>
+</head>
+<body>
+    <div style="display: flex;">
+    <div id ="result" class="box">While:<br></div>
+    <div id ="result2" class="box">Do While:<br></div>
+    <div id ="result3" class="box">For:<br></div>
+    </div>    
+    <script>
+// Pętle 
+
+var box = document.getElementById("result");
+var box2 = document.getElementById("result2");
+var box3 = document.getElementById("result3");
+
+// While
+var i = 0;
+while(i < 10){
+    box.innerHTML += i + "<br>";
+    i++;     
+}
+
+// Do While
+// najpierw wykonuje sie ciało pętli, pętla wykona się minimum 1 raz
+var j = 0;
+do {
+    box2.innerHTML += j +"<br>";
+    j++;
+} while(j < 10 );  
+
+//for
+;
+for(var k=0; k < 10; k++){
+    box3.innerHTML += k +"<br>";
+}
+
+
+
+
+    </script>
+    
+</body>
+</html>
