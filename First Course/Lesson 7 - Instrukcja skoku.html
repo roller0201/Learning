@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>  div {
+        width: 320px;
+        padding: 10px;
+        border: 5px solid gray;
+        margin: 0;
+      }  </style>
+</head>
+<body>
+    <div style="display: flex;">
+    <div id ="result" class="box">Continue:<br></div>
+    <div id ="result2" class="box">Break:<br></div>
+    <script>
+    var box = document.getElementById("result");
+    var box2 = document.getElementById("result2");
+    //continue 
+    loop1:
+    for(var j =0; j<3; j++)
+    
+
+    loop2:
+    for (var i = 0; i < 10; i++)
+    {
+        box.innerHTML += " - <br>";
+        if (i > 5)
+        {
+            continue loop1;
+        }
+        if (i % 2 == 1)
+        {
+            continue;
+        }
+    
+        box.innerHTML += j + "-" + i +"<br>";
+    }
+    
+    // break
+top:
+for (var j = 0; j < 3; j++)
+{
+    inner:
+    for (var i = 0; i < 10; i++)
+    {   
+        if ( i == 5 )
+        {
+            break;
+        }
+        
+    
+    box2.innerHTML += j + " - " + i + "<br>";
+    }
+}
+
+skip: 
+{
+    alert("Warning")
+    break skip;
+    alert("Skip")
+}
+
+
+    </script>
+    
+</body>
+</html>
