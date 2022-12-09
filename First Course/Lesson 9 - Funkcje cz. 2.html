@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>  div {
+        width: 320px;
+        padding: 10px;
+        border: 5px solid gray;
+        margin: 0;
+      }  </style>
+</head>
+<body>
+    <div style="display: flex;">
+    <div id ="result" class="box">Wynik:<br></div>
+<script>
+var result = document.getElementById("result");
+
+// return
+    function add(a,b)
+    {
+         return "Wynik = " +  (a+b);
+         alert ("Next...");  // nie pojawi się ponieważ bo return konczy funkcje
+    }
+
+    var sum = add(5, 5);
+    result.innerHTML += "Suma = " + sum + "<br>";
+//alert(add(10,30));
+
+// rekurencja
+
+// n(silnia) = 5, 5*4*3*2*1
+
+function silnia(n)
+{
+if (n == 1)
+return 1;
+else 
+return n * silnia(n -1)
+}
+
+result.innerHTML += "Silnia =" + silnia(8)
+</script>
+</body>
+</html>
