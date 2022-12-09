@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     .good{
+        color:rgb(255, 127, 127);
+     }   
+     #answer{
+    font-size :80%;
+     }
+    </style>
+</head>
+<body>
+    Lekcja 13 - Prosta gra
+    <div style="display: flex;">
+        <div id = "box" class ="box justify">
+        <p> Zgadnij liczbę od 1 - 10</p>
+        </div>
+            <input type="text" id="input">
+            <button id="button">Wyślij</button>
+       
+    </div>
+    <p id="answer">-----</p>
+    <div class="List">Odpowiedzi:
+    <ul id= "list">
+    
+    </ul>
+    </div>
+    </div>
+</div>
+    </body>
+    <script>
+    var input = document.getElementById("input");
+    var button = document.getElementById("button");
+    var answer = document.getElementById("answer");
+    var list = document.getElementById("list");
+    var i=0;
+
+    var los = Math.floor(Math.random()*10) +1;
+
+    button.addEventListener("click", sprawdz);
+
+    function sprawdz()
+    {
+        var value = Number(input.value);
+        if (Number.isInteger(value)&& value >= 1 && value <= 10)
+        {
+        i++;
+
+        if (los > value)
+        {
+            answer.innerHTML = "Wylosowana liczba jest większa od Twojej!";
+        }
+        else if( los < value)
+        {
+            answer.innerHTML = "Wylosowana liczba jest mniejsza od Twojej!";
+        }
+        else 
+        {
+        answer.innerHTML = "Brawo!!!, Zgadłeś za " + i + " razem!";
+        answer.classList.add("good");
+        button.innerHTML = "Odśwież";
+        button.removeEventListener("click", sprawdz);
+        button.addEventListener("click", odswiez);
+        
+        }
+        
+
+        var li = document.createElement("li");
+        list.appendChild(li);
+        list.lastChild.innerHTML = i.toString() + ": " + value;
+        }
+        else
+        {
+            alert("Błędna liczba");
+        }
+
+    }
+   function odswiez(){
+    location.reload();
+   }
+
+
+    </script>
+</body>
+</html>

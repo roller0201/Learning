@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// operatory porównania
+
+var x = 5 == 5;
+console.log(x);
+console.log(typeof(x));
+
+console.log("------");
+console.log(5 == '5'); // === działa tak samo jak ==
+console.log(5 === '5'); // === sprawdza czy wartości sa rowne oraz czy typ jest ten sam
+
+console.log(5 != "5"); // false != "rózny"
+console.log(5 !== "5"); // true bo inny typ
+
+console.log(5 > 5); // false operator większości
+console.log(6 > 5); // true
+
+console.log(5 >= 5); // true operator większe, równe
+console.log(4 >= 5); // false 
+
+console.log(5 < 5); // false, operator mniejszości
+console.log(3 < 5); // true 
+
+console.log(5 <= 5); // true, operator mniejsza, równe
+console.log(6 <= 5); // false
+
+// operatory logiczne
+
+console.log(5 >=5 || 5 == 1); // || - "OR" true, bo chociaż jedno jest true
+console.log(5 > 5 || 5 == 1); // false, bo obie są false
+console.log(true || false); // true
+
+console.log(true && false); // "i" , "AND"// false, oba musza być true
+console.log(true && true); // true, bo obie są true
+
+console.log(!5 > 0); // false, "NOT" negacja, odwrócenie wartości
+
+console.log((true || true) && false)// kolejność wykonywania operatorów, trzeba uzywac nawiasów
+console.log((true || true) && !false) // true
+    </script>
+</body>
+</html>

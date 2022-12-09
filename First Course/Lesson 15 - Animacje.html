@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .container {
+        height: 100vh;
+        width: 100%;
+        position: relative;
+    }
+
+    .inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: left 1s;
+    }
+
+    .inner2 {
+        position: absolute;
+        top: 50%;
+        left: -50%;
+        transform: translate(-50%, -50%);
+    }
+    </style>
+</head>
+<body>
+    <p>Lekcja 15 - Animacje</p>
+
+    <div id = box1 class="container">
+      <div class="inner">
+        <p class="p1">Kanał o wszystkim</p>
+        <p class="p2">na youtube</p>
+    </div>  
+    </div>
+
+    <div id="box2" class="container">
+        <div class = "inner">
+            <p class="p1">Subrybuj!</p>
+            <p class="p2">mój kanał!</p>
+    </div>
+    </div>
+
+<script>
+// Animacje
+
+let box1 = document.querySelector("#box1");
+let box2 = document.querySelector("#box2");
+
+//setInterval(function() {console.log(box1.getBoundingClientRect().top)},1000);
+
+box1.firstElementChild.classList.remove("inner");
+box1.firstElementChild.classList.add("inner2");
+box2.firstElementChild.classList.remove("inner");
+box2.firstElementChild.classList.add("inner2");
+
+let interval = setInterval(function(){box1.getBoundingClientRect().top <= 0? changeClass(): null, 1000/60});
+function changeClass()
+{
+box1.firstElementChild.classList.remove("inner2");
+box1.firstElementChild.classList.add("inner")
+clearInterval(interval);
+}
+
+let interval2 = setInterval(function(){box1.getBoundingClientRect().top <= 0? startAnimation(): null},1000/60);
+let interval3;
+function startAnimation ()
+{
+    interval3 = setInterval(animation, 1000/60);
+    clearInterval(interval2);
+}
+let pos = -50;
+function animation()
+{
+pos += 1;
+box2.firstElementChild.style.left = pos + "%";
+if (pos >= 50){
+    clearInterval(interval3);
+}
+}
+
+</script>
+</body>
+</html>
