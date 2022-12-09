@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>  div {
+    width: 320px;
+    padding: 10px;
+    border: 5px solid gray;
+    margin: 0;
+  }  </style>
+</head>
+<body>
+    <div id ="result" class="box">JavaScript</div>
+    <script>
+    // instrukcje wyboru
+        var box = document.getElementById("result");
+        var color = "pink";
+    // instrukcja switch jest bardziej czytelna niż if
+    switch(color){
+        case "red" :
+            box.style.backgroundColor = "red";
+            box.style.color = "white";
+            break;
+           
+        case "blue" :
+            box.style.backgroundColor = "blue";
+            box.style.color = "white";
+            break;
+           
+        case "green" :
+            box.style.backgroundColor = "green";
+            box.style.color = "white";
+            break;
+        default:
+            box.style.backgroundColor = "grey";
+            box.style.color = "white";
+            break;    
+    };
+
+
+    </script>
+
+    
+</body>
+</html>
