@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="no-margin">Lekcja 14-DOM</p>
+    <div style="display: flex">
+        <div id="box" class="box justify">
+            <p>Document Object Model</p>
+            <p id="placeholder">placeholder</p>
+            <ul id="list">
+                <li class="good">Teskt 1</li>
+                <li>Tekst 2</li>
+                <li id = "LI4">Tekst 4</li>
+                <li class="good">Tekst 5</li>
+        </ul>    
+    </div>
+    </div>
+</div>    
+    <script>
+        console.log(document);
+
+    var placeholder = document.getElementById("placeholder");
+    placeholder.innerHTML = "<b>JavaScript</b>";
+
+    var goods = document.getElementsByClassName("good");
+    console.log(goods);
+
+    for (var i = 0; i < goods.length; i++)
+    {
+        goods[i].innerText = " - Ok";
+    }
+
+    var li = document.getElementsByTagName("li");
+    console.log(li);
+
+   var newLI = document.createElement("li");
+   var text = document.createTextNode("Tekst 6");
+   newLI.appendChild(text);
+
+   var list =document.getElementById("list");
+   list.appendChild(newLI);
+
+   var newLI2 = document.createElement("li");
+   var text2 = document.createTextNode("Tekst 3");
+   newLI2.appendChild(text2);
+
+   list.insertBefore(newLI2, document.getElementById("LI4"));
+
+   var firstLi = list.firstElementChild;
+
+   var newLI3 = document.createElement("li");
+   var text3 = document.createTextNode("Nagłowek");
+   newLI3.appendChild(text3);
+   newLI3.classList.add("good");
+
+   list.replaceChild(newLI3, firstLi);
+
+   list.appendChild(list. lastElementChild.cloneNode(true));
+   list.removeChild(list.lastElementChild); 
+   var last = list.lastElementChild
+   // ...
+
+   last.parentNode.removeChild(last);
+
+   
+
+
+
+   
+
+    </script>
+</body>
+</html>
