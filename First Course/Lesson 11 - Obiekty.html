@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>  div {
+        width: 320px;
+        padding: 10px;
+        border: 5px solid gray;
+        margin: 0;
+      }  </style>
+</head>
+<body>
+    <div style="display: flex;">
+    <div id ="result" class="box">Wynik:<br></div>    
+<script>
+ //Obiekty
+var result = document.getElementById("result");
+// 1
+var adam = {name: "Adam", age: 25, 
+show()
+{
+    return "Imię:" + this.name + ",Wiek:" + this.age + "<br>";
+}
+};
+console.log(adam)
+
+result.innerHTML += adam.name;
+result.innerHTML += "Lat:" + adam['age'] + "<br>";
+result.innerHTML += adam.show();
+// 2
+
+function Person(name, age)
+{
+    this.name = name;
+    this.age = age;
+    this.show = function()
+    {
+        
+    return "Imię:" + this.name + ",Wiek:" + this.age + "<br>";
+
+    }
+}
+
+var bartek = new Person ("Bartek", 19);
+result.innerHTML += bartek.name + "<br>";
+
+var ola = new Person("Ola", 20)
+result.innerHTML += ola.name + "<br>"
+
+result.innerHTML += bartek.show();
+result.innerHTML += ola.show();
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
