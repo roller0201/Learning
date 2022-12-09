@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div style="display: flex;">
+    <div id ="result" class="box">Wynik:<br></div>
+    <script>
+    // funkcje
+    var result = document.getElementById("result");
+    add(5);
+    add(10,20);
+    add(10,20,5);
+
+    function add(a, b,)
+    {
+        if (typeof(b)=== "undefined")
+        {
+            b = 1;
+        }
+        if(arguments.length < 3 )
+        result.innerHTML += a + " +" + b +" = " + (a + b) + "<br>";
+        else
+        result.innerHTML += a + " +" + b + "+" + arguments[2] + "=" + (a + b + arguments[2]) + "<br>";
+    }
+    function hello()
+    {
+        alert("Hello world!");
+    }
+    
+    </script>
+</body>
+</html>
