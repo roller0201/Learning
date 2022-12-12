@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const [num, name, obj] = [12, "Ania", { b: 6 }];
+      console.log(num); //12
+      console.log(name); //Ania
+      console.log(obj); // b:6
+
+      const { userName, age, city = "KRK" } = { userName: "Ola", age: 30 };
+      console.log(userName); // Ola
+      console.log(age); // 30
+      console.log(city); // KRk
+
+      const [a, b, c, d = 10] = [1, 2, 3];
+      console.log(d); // 10
+
+      const [f, , h] = [9, 10, 11];
+      console.log(f); //9
+      console.log(h); // 11
+
+      function getUserData(){
+        const userCity = "Wawa";
+        const street = "Wilcza";
+        // zapis skrócony
+        return {
+            userCity, 
+            street,  
+        };
+      }
+      const userData1 = getUserData();
+      console.log(userData1); //{userCity: 'Wawa', street: 'Wilcza'}
+
+      const {userCity, street} = getUserData();
+      console.log(userCity, street);
+
+      const userDetails = {
+        name: "Karol",
+        age: 30,
+        city: "Gdańsk"
+      };
+      function printUser({city, name}){
+        console.log(city, name);
+
+
+      }
+      printUser(userDetails);
+
+      const employee = {
+        name: "Ola",
+        id: 34, 
+        employment: {
+            company: "example.com",
+            address: {
+                country: "Poland",
+                // street: "Polna"
+            }
+        }
+      };
+      const {id, employment:{company} } = employee;
+      console.log(id, company); //34 'example.com'
+
+      const {employment:{address:{country}}} = employee;
+      console.log(country);  // Poland
+      const {employment: {address:{street: companyStreet = "Wilcza"}}} = employee;
+      console.log(companyStreet); // Wilcza
+
+    </script>
+  </body>
+</html>
