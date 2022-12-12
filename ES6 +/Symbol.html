@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const car = {
+        name: "Ford",
+        topSpeed: 150,
+      };
+
+      let id = Symbol("id");
+      car[id] = 123;
+      console.log(car[id]); // 123
+
+      let otherId = Symbol();
+      car[otherID] = 1001;
+      console.log(car[otherID]); //1001
+
+      console.log(id === otherId); // false
+
+      console.log(Object.keys(car)); // [name, topSpeed]
+    </script>
+  </body>
+</html>
