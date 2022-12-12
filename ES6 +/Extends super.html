@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Animal {
+        constructor(name) {
+          this.name = name;
+
+          if (Animal.count === undefined) Animal.count = 0;
+
+          this.id = Animal.count;
+          Animal.count++;
+
+          this._type = "animal";
+        }
+        set type(str) {
+          if (typeof str === "string") this.type = str;
+        }
+
+        get type() {
+          return this._type;
+        }
+      }
+
+      class Human extends Animal {
+        constructor(name) {
+          super(name);
+        }
+        printName() {
+          console.log("Animal:", this.name);
+        }
+      }
+
+      const human1 = new Human("Olek");
+      human1.printName(); //Olek
+      console.log(Animal.count); // 1
+    </script>
+  </body>
+</html>
