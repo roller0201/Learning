@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function* foo() {
+        yield "test1";
+        yield "test2";
+        yield "test3";
+      }
+      const testIter = foo();
+      console.log(testIter.next()); // {value: 'test 1 ', done: false}
+      console.log(testIter.next()); // {value: "test2 ", done: false}
+      console.log(testIter.next()); // {value: "test3 ", done: false}
+      console.log(testIter.next()); // {value: undefined, done: true}
+
+      function* genRandomId() {
+        while (true) {
+          let v = Math.trunc(Math.random() * 1000);
+          yield v;
+        }
+      }
+      const randomID = genRandomId();
+      console.log(randomID.next()); //{value: 590, done: false}
+
+      function* genRandomMaxId() {
+        while (true) {
+          const maxValue = yield;
+          let v = Math.trunc(Math.random() * maxValue);
+          yield v;
+        }
+      }
+      const arr = Array.from(Array(10).keys());
+
+      const randomNumMaxIter = genRandomMaxId();
+
+      arr.forEach((el) => {
+        randomNumMaxIter.next(); // zatrzymujemy się przed przypisaniem wartości do maxValue
+        const random2 = randomNumMaxIter.next(150);
+        console.log("random:", random2.value);
+      });
+    </script>
+  </body>
+</html>
