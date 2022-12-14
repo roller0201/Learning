@@ -16,7 +16,7 @@ class RandomColor {
     const newColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
     this.input.value = newColor;
     document.body.style.backgroundColor = newColor;
-  }
+  };
   copyColorToClipBoard = () => {
     const v = this.input.value;
     const cb = navigator.clipboard;
