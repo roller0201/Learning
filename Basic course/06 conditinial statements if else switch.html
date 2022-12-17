@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let data = 5
+
+        if(data > 5) {
+            console.log('liczba w data jest większa od pięciu')
+        }
+        if(data == 5){
+            console.log('Liczba w data jest równa  pięć')
+        }
+        if(data <5){
+            console.log('Liczba w data jest mniejsza od pięć')
+        }
+
+        let age = 18
+        if(age >= 18){
+            console.log("Może głosować")
+        }
+        if(age < 18){
+            console.log("Nie może głosować")
+            console.log("Musi poczekać do 18 roku życia")
+        }
+        age = 12    
+        if (age >= 18){
+            console.log("może głosować")
+        }else {
+            console.log("nie może głosować")
+    }
+
+    let sportRanking = 5
+    if (sportRanking == 1){
+        console.log('Pierwsze miejsce!')
+    } else if (sportRanking == 2){
+        console.log('Drugie miejsce!')
+    }else if (sportRanking == 3){
+        console.log("Trzecie miejsce!")
+    }else {
+        console.log('Niestety, brak medalu')
+    }
+    //console.log("dalsza część programu")
+const x = 150
+const y = 99
+if (x > y){ //false
+    console.log('x jest większe od y')
+} else {
+    console.log('x jest mniejsze od y')
+}
+let topSpeed = 200
+switch(topSpeed){
+    case 100:
+        console.log("Mała prędkość maksymalna")
+        break;
+    case 150:
+        console.log("Prędkość 150 km/h")
+        break;
+    case 200:
+        console.log("szybko 200km/h")   
+        break;
+    case 250:
+        console.log('WOW 250 km/h') 
+        break;
+    case 300:
+        console.log("bardzo szybko 300km/h")
+        break;
+    case 310:
+    case 320:
+    case 330:  
+    console.log("Prędkość powyżej 300")
+    break
+    default:
+        console.log("Brak informacji")
+
+}
+
+    </script>
+</body>
+</html>
