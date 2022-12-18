@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function setContentToHtml(id, content){
+        let div = document.getElementById(id)
+        console.log(div)
+        div.innerHTML = content
+        }
+
+     //zdarzenie load jest wywołane gdy załadowane, sa obrazki kod html i css   
+    window.addEventListener("load", function() {
+        console.log("load event")
+
+        let div = document.getElementById("content")
+        console.log(div)
+        setContentToHtml("Content1", "Hello World!")
+    })
+
+    window.onload = function(){
+        console.log("onload czyli load event!")
+        setContentToHtml("Content2", "<b>Hello World!</b>")
+    }
+
+    </script>
+<div id="Content1"></div>
+<div id="Content2"></div>
+
+ 
+   
+</body>
+</html>
