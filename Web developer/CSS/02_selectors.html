@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      header {
+        background-color: black;
+        padding-bottom: 10px;
+      }
+      #logo {
+        width: 50px;
+        height: 50px;
+        margin-left: 5px;
+      }
+      ul {
+        text-align: center;
+      }
+      li > a {
+        color: white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      ul li {
+        display: inline;
+        margin-left: 5px;
+      }
+      main {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      main h1,
+      main p {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-align: justify;
+      }
+
+      p + ol {
+        background-color: azure;
+        padding: 20px;
+      }
+      ol ~ p {
+        font-style: italic;
+      }
+
+      .item {
+        font-weight: bold;
+      }
+      #header-gallery {
+        width: 100%;
+        height: 400px;
+        background: url("https://cdn.pixabay.com/photo/2013/02/21/19/06/drink-84533_960_720.jpg")
+          no-repeat center;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <img
+          id="logo"
+          src="https://cdn.pixabay.com/photo/2016/12/17/15/50/logo-1913689_960_720.png"
+          alt="logo"
+        />
+        <ul>
+          <li><a href="#">Strona główna</a></li>
+          <li><a href="#">Blok</a></li>
+          <li><a href="#">Kontakt</a></li>
+          <li><a href="#">Regulamin</a></li>
+        </ul>
+      </nav>
+    </header>
+    <header id="header-gallery"></header>
+    <main>
+      <article>
+        <h1>Moje wakacje</h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <ol>
+          <li class="item">Wyspa</li>
+          <li class="item">Góry</li>
+          <li class="item">Lasy</li>
+          <li class="item">Jeziora</li>
+        </ol>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore,
+          officia?
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore,
+          officia?
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore,
+          officia?
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore,
+          officia?
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore,
+          officia?
+        </p>
+      </article>
+    </main>
+  </body>
+</html>
