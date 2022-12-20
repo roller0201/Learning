@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      [data-color] {
+        background-color: red;
+        border: 2px dotted red;
+        font-weight: bold;
+      }
+      [data-color="blue"] {
+        background-color: blue;
+        border: 2px solid darkblue;
+      }
+      [data-green="light" i] {
+        background-color: lightgreen;
+      }
+      [class*="str"] {
+        background-color: orange;
+      }
+      [class~="small-text"] {
+        font-size: 10px;
+      }
+      [class^="small-text"] {
+        border: 15px solid darkorange;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="small-text str box">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, molestiae
+      maxime repudiandae labore unde adipisci?
+    </div>
+    <div data-color>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, enim
+      quae! Distinctio, tempore adipisci saepe quos quibusdam enim laudantium
+      dolor?
+    </div>
+    <div data-green="lighT">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem,
+      similique?
+    </div>
+    <div>Lorem ipsum dolor sit amet.</div>
+    <p data-color="blue">Lorem ipsum dolor sit.</p>
+  </body>
+</html>
