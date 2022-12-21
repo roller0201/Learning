@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Business Card</title>
+    <style>
+      body {
+        background: url("https://cdn.pixabay.com/photo/2016/11/22/19/17/buildings-1850129_960_720.jpg")
+          no-repeat center center fixed;
+        background-size: cover;
+      }
+      .container {
+        margin: 60px auto;
+        padding: 30px;
+        width: 400px;
+        height: 150px;
+        background-color: black;
+        color: silver;
+      }
+
+      #img {
+        float: left;
+      }
+
+      .username,
+      .email,
+      .download-cv {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+      }
+      .username span {
+        border-bottom: 2px solid red;
+        padding-bottom: 4px;
+      }
+      .email {
+        font-size: 15px;
+      }
+      .download-cv a {
+        color: red;
+        font-size: 14px;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="bussines-card">
+        <img
+          id="img"
+          src="https://randomuser.me/api/portraits/men/53.jpg"
+          alt="zdjęcie"
+        />
+        <p class="username">
+          <span>Daniel Fargo</span>
+        </p>
+        <p class="email">
+          <span>daniel@example.com</span>
+        </p>
+        <p class="download-cv">
+          <span>
+            <a href="#">Download CV</a>
+          </span>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
