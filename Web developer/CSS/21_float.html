@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .header {
+        border: 2px solid red;
+      }
+      .left {
+        float: left;
+        margin: 5px;
+      }
+      .right {
+        float: right;
+        margin: 5px;
+      }
+      span {
+        float: left;
+        background-color: lightgray;
+        padding: 5px;
+        margin: 5px;
+      }
+      .clearfix::after {
+        content: " ";
+        display: block;
+        height: 0;
+        clear: both;
+      }
+      article,
+      aside {
+        box-sizing: border-box;
+        padding: 10px;
+      }
+      .left-column {
+        width: 75%;
+        height: 300px;
+        float: left;
+        background-color: lightgreen;
+      }
+      .side-bar {
+        width: 25%;
+        height: 300px;
+        float: left;
+        background-color: lightgray;
+      }
+      .page {
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="header clearfix">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        <img
+          class="right"
+          width="100"
+          src="https://cdn.pixabay.com/photo/2021/01/03/13/57/gingerbread-5884607_960_720.jpg"
+          alt=""
+        />
+        Aspernatur minima, ut blanditiis repudiandae soluta, aut nihil vel
+        doloremque id nesciunt illum deleniti dolore sequi ea illo corrupti
+        pariatur beatae, tenetur a incidunt molestias suscipit molestiae fuga.
+        Officia expedita, doloremque placeat, eius id nulla quos asperiores
+        nobis nostrum qui, quo laudantium?
+        <span>Lorem, ipsum1.</span>
+        <span>Lorem, ipsum2.</span>
+        <span>Lorem, ipsum3.</span>
+        <span>Lorem, ipsum4.</span>
+        <span>Lorem, ipsum5.</span>
+      </header>
+      <article class="left-column">article</article>
+      <aside class="sidebar">aside</aside>
+    </div>
+  </body>
+</html>

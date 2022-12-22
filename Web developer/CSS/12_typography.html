@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p {
+        border: 2px solid black;
+        padding: 10px;
+        margin: 30px;
+      }
+      .uppercase {
+        text-transform: uppercase;
+      }
+      .capitalize {
+        text-transform: capitalize;
+      }
+      .lowercase {
+        text-transform: lowercase;
+      }
+      .underline {
+        text-decoration: underline;
+        text-decoration-style: dotted;
+        text-decoration-color: orange;
+      }
+      .overline {
+        text-decoration: overline;
+      }
+      .line-through {
+        text-decoration: line-through;
+      }
+      .align-right {
+        text-align: right;
+      }
+      .align-center {
+        text-align: center;
+      }
+      .justify {
+        text-align: justify;
+      }
+      .lh34 {
+        line-height: 180%;
+      }
+      .sub {
+        vertical-align: sub;
+      }
+      .sup {
+        vertical-align: super;
+      }
+      .indent {
+        text-indent: -4em;
+      }
+      .ws2em {
+        word-spacing: 2em;
+      }
+      .ls {
+        letter-spacing: 0.2em;
+      }
+      .shadow1 {
+        text-shadow: 2px 3px red;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="align-right shadow1">
+      Lorem
+      <span class="underline uppercase">ipsum dolor sit amet</span
+      ><span class="sup"> consectetur</span>.
+    </p>
+    <p class="align-center ls">
+      Lorem
+      <span class="capitalize overline indent">ipsum dolor sit amet</span
+      ><span class="sub ws2em"> consectetur</span>.
+    </p>
+    <p class="line-through justify lh34">
+      Lorem <span class="lowercase">IPSUM dolOR sIT amet</span> consectetur.
+    </p>
+  </body>
+</html>
