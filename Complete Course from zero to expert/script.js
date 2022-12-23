@@ -29,7 +29,7 @@ const birthYear = 1991;
 //birthYear = 1990; // type error
 var job = "programmer";
 job = "teacher";*/
-
+// Math operation
 const now = 2037;
 const ageJonas = now - 1991;
 const ageSarah = now - 2018;
@@ -41,4 +41,12 @@ const firstName = "Jonas";
 const lastName = "Schmedtmann";
 console.log(firstName + " " + lastName);
 
-let x = 10 + 5;
+let x = 10 + 5; //15
+x += 10; //25
+x *= 4; //100
+x++;
+x--;
+console.log(x);
+
+//comparison operators
+console.log(ageJonas > ageSarah); //true
