@@ -59,7 +59,7 @@ let z, y;
 z = y = 25 - 10 - 5;
 console.log(z, y);*/
 
-let marksMass = 78;
+/*let marksMass = 78;
 let marksHeights = 1.69;
 let johnsMass = 92;
 let johnsHeights = 1.95;
@@ -85,3 +85,62 @@ markHigherBMI = bodyMassIndexmarks > bodyMaxIndexJohns;
 console.log(markHigherBMI);
 markHigherBMI2 = bodyMassIndexmarks2 > bodyMaxIndexJohns2;
 console.log(markHigherBMI2);
+
+/*const firstName = "Jonas";
+const job = "teacher";
+const birthYear = 1991;
+const year = 2037;
+
+const jonas =
+  "I'm " + firstName + ", " + (year - birthYear) + " years old " + job + "!";
+console.log(jonas);
+
+const jonasNew = `I' m ${firstName}, ${year - birthYear} years old ${job}! `;
+console.log(jonasNew);
+
+console.log(`String with \n\ 
+multiple \n\
+lines`);*/
+
+/*const age = 15;
+const isOldEnough = age >= 18;
+
+if (age >= 18) {
+  console.log("Sarah can start driving licence");
+} else {
+  const yearsLeft = 18 - age;
+  console.log(`Sarah is too young. Wait another ${yearsLeft} years`);
+}
+
+const birthYear = 2012;
+let century;
+if (birthYear <= 2000) {
+  century = 20;
+} else {
+  century = 21;
+}
+console.log(century);*/
+
+/*if (bodyMassIndexmarks > bodyMaxIndexJohns) {
+  console.log(
+    `Mark's BMI ${Math.floor(
+      bodyMassIndexmarks
+    )} is higher than John's ${Math.floor(bodyMaxIndexJohns)}`
+  );
+} else
+  `John's BMI ${Math.floor(
+    bodyMaxIndexJohns
+  )} is higher than Mark's ${Math.floor(bodyMassIndexmarks)}`;
+
+if (bodyMassIndexmarks2 > bodyMaxIndexJohns2) {
+  console.log(
+    `Mark's BMI ${Math.floor(
+      bodyMassIndexmarks2
+    )} is higher than John's ${Math.floor(bodyMaxIndexJohns2)}`
+  );
+} else
+  console.log(
+    `John's BMI ${Math.floor(
+      bodyMaxIndexJohns2
+    )} is higher than Mark's ${Math.floor(bodyMassIndexmarks2)}`
+  );*/
