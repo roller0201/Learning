@@ -144,3 +144,41 @@ if (bodyMassIndexmarks2 > bodyMaxIndexJohns2) {
       bodyMaxIndexJohns2
     )} is higher than Mark's ${Math.floor(bodyMassIndexmarks2)}`
   );*/
+// type conversion
+/*const inputyear = "1991";
+console.log(Number(inputyear));
+console.log(inputyear + 18);
+console.log(Number(inputyear) + 18);
+
+console.log(String(23));
+// type coercian
+
+console.log(" I am " + 23 + "years old");
+console.log("I am" + "23" + "years old");
+console.log("23" - "10" - 3); //10
+console.log("23" / "2"); //11.5
+console.log("23" * "2"); //46
+
+let n = "1" + 1; //11
+n = n - 1; //11-1
+console.log(n); //10*/
+// 5 falsy values
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean(""));
+console.log(Boolean(null));
+console.log(Boolean(NaN));
+
+const money = 100;
+if (money) {
+  console.log("Dont spend it all");
+} else {
+  console.log("You should get a job");
+}
+
+let height;
+if (height) {
+  console.log("Ya, Height is defined");
+} else {
+  console.log("height is undefined!");
+}
