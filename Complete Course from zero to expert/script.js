@@ -300,7 +300,7 @@ if (day === "monday") {
   console.log("Enjoy the weekend");
 } else console.log("Not a valid day");*/
 
-const age = 15;
+/*const age = 15;
 age >= 18
   ? console.log(" I like to drink wine")
   : console.log("I like to drink water");
@@ -316,4 +316,25 @@ if (age >= 18) {
 }
 
 console.log(drink2);
-console.log(`I like to drink ${age >= 18 ? "wine" : "water"}`);
+console.log(`I like to drink ${age >= 18 ? "wine" : "water"}`);*/
+/*
+const bill1 = 275;
+const bill2 = 40;
+const bill3 = 430;
+
+const tip1 = bill1 > 50 && bill1 < 300 ? 0.15 : 0.2;
+console.log(
+  `The bill was ${bill1} the tip was ${(total =
+    tip1 * bill1)} and the total value ${bill1 + total} `
+);
+
+const tip2 = bill2 > 50 && bill2 < 300 ? 0.15 : 0.2;
+console.log(
+  `The bill was ${bill2} the tip was ${(total1 =
+    tip2 * bill2)} and the total value ${bill2 + total1} `
+);
+const tip3 = bill3 > 50 && bill3 < 300 ? 0.15 : 0.2;
+console.log(
+  `The bill was ${bill3} the tip was ${(total2 =
+    tip3 * bill3)} and the total value ${bill3 + total2} `
+);*/
