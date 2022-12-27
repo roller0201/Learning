@@ -159,3 +159,18 @@ console.log(friends.includes("23"));
 if (friends.includes("Peter")) {
   console.log("You have a friend Peter");
 }*/
+
+/*const calcTip = (bill) => {
+  return bill >= 50 && bill < 300 ? bill * 0.15 : bill * 0.2;
+};
+console.log(calcTip(100));
+const tip1 = calcTip(125);
+const tip2 = calcTip(555);
+const tip3 = calcTip(44);
+
+const bills = new Array(125, 555, 44);
+const tips = new Array(tip1, tip2, tip3);
+console.log(tips);
+
+const total = new Array(tip1 + bills[0], tip2 + bills[1], tip3 + bills[2]);
+console.log(total);*/
