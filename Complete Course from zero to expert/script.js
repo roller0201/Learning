@@ -338,3 +338,5 @@ console.log(
   `The bill was ${bill3} the tip was ${(total2 =
     tip3 * bill3)} and the total value ${bill3 + total2} `
 );*/
+
+
