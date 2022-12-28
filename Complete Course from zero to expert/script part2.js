@@ -174,3 +174,102 @@ console.log(tips);
 
 const total = new Array(tip1 + bills[0], tip2 + bills[1], tip3 + bills[2]);
 console.log(total);*/
+
+/*const jonasArray = [
+  "Jonas",
+  "Schmedtmann",
+  2037 - 1991,
+  "teacher",
+  ["Micheal", "Peter", "Steven"],
+];
+
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  age: 2037 - 1991,
+  job: "teacher",
+  friends: ["Micheal", "Peter", "Steven"],
+};
+
+console.log(jonas);
+console.log(jonas.lastName);
+console.log(jonas["lastName"]);
+
+const nameKey = "Name";
+console.log(jonas["first" + nameKey]);
+console.log(jonas["last" + nameKey]);
+
+/*const interestedIn = prompt(
+  "what do you want to know about Jonas? Choose beetween firstName, lastName, age, job, and friends"
+);
+
+if (jonas[interestedIn]) {
+  console.log(jonas[interestedIn]);
+} else {
+  console.log(
+    "Wrong request! Choose beetween firstName, lastName, age, job, and friends"
+  );
+}*/
+/*
+jonas.location = "Portugal";
+jonas["twitter"] = "@jonasschmedtman";
+console.log(jonas);
+
+console.log(
+  `${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}`
+);*/
+
+/*const jonas = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  birthYear: 1991,
+  job: "teacher",
+  friends: ["Micheal", "Peter", "Steven"],
+  hasDriversLicense: true,
+
+  calcAge: function () {
+    return 2037 - this.birthYear;
+  },
+
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()}-old ${
+      this.job
+    }, and he has ${this.hasDriversLicense ? "a" : "no"} drivers license `;
+  },
+};
+console.log(jonas.calcAge(1991));
+console.log(jonas["calcAge"](1991));
+console.log(jonas.getSummary()); */
+
+/*const mark = {
+  firstName: "Mark",
+  lastName: "Miller",
+  weight: 78,
+  height: 1.69,
+
+  calcBMI: () => {
+    return mark.weight / mark.height ** 2;
+  },
+};
+const markBMI = Math.floor(mark.calcBMI());
+Math.floor(markBMI);
+const john = {
+  firstName: "John",
+  lastName: "Smitch",
+  weight: 92,
+  height: 1.95,
+  calcBMI: () => {
+    return john.weight / john.height ** 2;
+  },
+};
+const johnBMI = Math.floor(john.calcBMI());
+
+if (johnBMI > markBMI) {
+  console.log(
+    `${john.firstName}'s BMI ${johnBMI} is higher than ${mark.firstName}'s ${markBMI}`
+  );
+} else if (johnBMI < markBMI) {
+  console.log(
+    `${mark.firstName}'s BMI ${markBMI} is higher than ${john.firstName}'s ${johnBMI}`
+  );
+}*/
