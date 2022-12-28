@@ -273,3 +273,116 @@ if (johnBMI > markBMI) {
     `${mark.firstName}'s BMI ${markBMI} is higher than ${john.firstName}'s ${johnBMI}`
   );
 }*/
+
+/*console.log("Lifting weights reception 1");
+console.log("Lifting weights reception 2");
+console.log("Lifting weights reception 3");
+console.log("Lifting weights reception 4");
+console.log("Lifting weights reception 5");
+console.log("Lifting weights reception 6");
+console.log("Lifting weights reception 7");
+console.log("Lifting weights reception 8");
+console.log("Lifting weights reception 9");
+console.log("Lifting weights reception 10");*/
+
+/*for (let rep = 1; rep <= 10; rep++) {
+  console.log("Lifting weights reception", rep);
+}*/
+/*const jonas = [
+  "Jonas",
+  "Schmedtmann",
+  2037 - 1991,
+  "teacher",
+  ["Micheal", "Peter", "Steven"],
+  true,
+];
+
+const types = [];
+
+for (let i = 0; i < jonas.length; i++) {
+  console.log(jonas[i], typeof jonas[i]);
+
+  //types[i] = typeof jonas[i];
+  types.push(typeof jonas[i]);
+}
+
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i <= years.length - 1; i++) {
+  ages.push(2037 - years[i]);
+}
+console.log(ages);
+
+// continue and break
+
+for (let i = 0; i < jonas.length; i++) {
+  if (typeof jonas[i] !== "string") continue;
+  console.log(jonas[i], typeof jonas[i]);
+}
+for (let i = 0; i < jonas.length; i++) {
+  if (typeof jonas[i] === "number") break;
+  console.log(jonas[i], typeof jonas[i]);
+}*/
+
+/*const jonas = [
+  "Jonas",
+  "Schmedtmann",
+  2037 - 1991,
+  "teacher",
+  ["Micheal", "Peter", "Steven"],
+];
+
+for (let i = jonas.length - 1; i >= 0; i--) {
+  console.log(jonas[i]);
+}
+
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`--------- Starting ${exercise}`);
+
+  for (let rep = 1; rep < 6; rep++) {
+    console.log(`Liftig weight repetition ${rep}`);
+  }
+}*/
+/*let rep = 1;
+while (rep <= 10) {
+  console.log("While:Lifting weights reception", rep);
+  rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+console.log(dice);
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) console.log("Loop is about the end");
+}*/
+/*calcTip = (bill) => {
+  return bill >= 50 && bill < 300 ? bill * 0.15 : bill * 0.2;
+};
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+for (let i = 0; i < bills.length; i++) {
+  const tip = calcTip(bills[i]);
+  tips.push(tip);
+  const total = tips[i] + bills[i];
+  totals.push(total);
+  console.log("Bill is", totals[i]);
+}
+console.log(tips);
+console.log(totals);
+
+const calcAverage = (arr) => {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum / arr.length;
+};
+console.log(calcAverage(totals));
+console.log(calcAverage(tips));*/
