@@ -44,7 +44,7 @@ console.log(age1, age2);*/
 //arrow function
 
 /*const calcAge3 = (birthyear) => 2037 - birthyear;
-const age3 = calcAge3(1991);
+const age3 = calcAge(1991);
 console.log(age3);
 
 const yearsUntilRetirement = (birthyear, firstName) => {
@@ -60,7 +60,7 @@ console.log(yearsUntilRetirement(1980, "bob"));*/
   return fruit * 4;
 }
 
-function fruitProcessor(apples, oranges) {
+function fruitPocessor(apples, oranges) {
   const applePieces = cutFruitPieces(apples);
   const orangePieces = cutFruitPieces(oranges);
   const juice = `Juice with ${applePieces} piece of apples and ${orangePieces}pieces of  orange`;
@@ -81,7 +81,7 @@ const yearsUntilRetirement = function (birthYear, firstName) {
   } else {
     console.log(`${firstName} has already retired`);
     return -1;
-  }
+  
 
   // return `${firstName} retires in ${retirement} years`;
 };
@@ -386,3 +386,4 @@ const calcAverage = (arr) => {
 };
 console.log(calcAverage(totals));
 console.log(calcAverage(tips));*/
+//ghgfhgfhgf;
