@@ -1,4 +1,19 @@
 "use strict";
+const weekdays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [weekdays[5]]: {
+    open: 0,
+    close: 24,
+  },
+};
 
 const restaurant = {
   name: "Classico Italiano",
@@ -6,20 +21,7 @@ const restaurant = {
   categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
   starterMenu: ["Foccacia", "Bruschetta", "Garlic bread", "Caprese Salad"],
   mainMenu: ["Pizza", "Pasta", "Risotto"],
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0,
-      close: 24,
-    },
-  },
+  openingHours,
 
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
@@ -53,18 +55,122 @@ restaurant.orderDelivery({
   address: "Via del sole,21",
   starterIndex: 1,
 });
+
+/*const question = new Map([
+  ["question", "What is the best programming language in the world?"],
+  [1, "C"],
+  [2, "Java"],
+  [3, "JavaScript"],
+  ["correct", 3],
+  [true, "Correct"],
+  [false, "Try again"],
+]);
+
+console.log(question);
+//Convert object to map
+console.log(Object.entries(openingHours));
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+console.log(question.get("question"));
+for (const [key, value] of question) {
+  if (typeof key === "number") console.log(`Answer ${key}: ${value}`);
+}
+const answer = Number(prompt("Your answer"));
+console.log(question.get(question.get("correct") === answer));
+// Convert map to array
+console.log([...question]);*/
+/*const rest = new Map();
+rest.set("Name", "Classico Italiano");
+rest.set(1, "Firenze, Italy");
+rest.set(2, "Lisbon, Portugal");
+console.log(rest);
+rest
+  .set("categories", ["Italian", "Pizzeria", "Vegetarian", "Organic"])
+  .set("open", 11)
+  .set("close", 23)
+  .set(true, "We are open")
+  .set(false, "We are closed");
+
+console.log(rest.get("Name"));
+console.log(rest.get(true));
+
+const time = 21;
+console.log(rest.get(time > rest.get("Open") && time < rest.get("close")));
+
+console.log(rest.has("categories"));
+rest.delete(2);
+console.log(rest.size);
+
+rest.set([1, 2], "Test");
+rest.get([1, 2]);*/
+
+/*const orderSet = new Set([
+  "Pasta",
+  "Pizza",
+  "Pizza",
+  "Rissoto",
+  "Pasta",
+  "Pizza",
+]);
+console.log(orderSet);
+
+console.log(orderSet.size);
+console.log(orderSet.has("Pizza"));
+console.log(orderSet.has("Bread"));
+orderSet.add("Garlic Bread");
+orderSet.delete("Rissoto");
+console.log(orderSet);
+
+for (const order of orderSet) console.log(order);
+
+const staff = ["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"];
+
+const staffUnique = new Set(staff);
+console.log(staffUnique);*/
+/*const properties = Object.keys(openingHours);
+console.log(properties);
+
+let openStr = `We are open on ${properties.length} days:`;
+
+for (const day of properties) {
+  openStr += `${day}, `;
+}
+console.log(openStr);
+const values = Object.values(openingHours);
+console.log(values);
+
+const entries = Object.entries(openingHours);
+//console.log(entries);
+
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}*/
+/*if (restaurant.openingHours && restaurant.openingHours.mon)
+  console.log(restaurant.openingHours.mon.open);
+
+//with optimal chaining
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
+const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+for (const day of days) {
+  console.log(day);
+  const open = restaurant.openingHours[day]?.open ?? "closed";
+  console.log(`On ${day}, we open at ${open}`);
+}
+
+// Methods
+console.log(restaurant.order?.(0, 1) ?? "Method does not exist");
+console.log(restaurant.orderRisotto?.(0, 1) ?? "Method does not exist");
+
+// Arrays
+const users = [{ name: "Jonas", email: "hello@jonas.eu" }];
+
+console.log(users[0]?.name ?? "User array empty");*/
+
 /*const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
 for (const item of menu) console.log(item);
 
-for (const item of menu.entries()) {
-  console.log(`${item[0] + 1}: ${item[1]}`);
-}*/
-/*restaurant.numGuests = 0;
-const guests = restaurant.numGuests || 10;
-console.log(guests);
-
-//Nullis: null and undefined (not 0 or "")
 const guestsCorrect = restaurant.numGuests ?? 10;
 console.log(guestsCorrect); //0
 
